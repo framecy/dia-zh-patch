@@ -28,7 +28,7 @@ assert.equal(index.schemaVersion, 1);
 assert.ok(index.knownBuilds.length >= 1, "index must list at least one known build");
 
 const stringEntries = [...strings.matchAll(/^"((?:\\.|[^"])*)"\s*=\s*"((?:\\.|[^"])*)";$/gm)];
-assert.equal(stringEntries.length, 491, "translation catalog count changed unexpectedly");
+assert.equal(stringEntries.length, 510, "translation catalog count changed unexpectedly");
 const stringKeys = stringEntries.map((entry) => entry[1]);
 const duplicateKeys = stringKeys.filter((key, index) => stringKeys.indexOf(key) !== index);
 assert.deepEqual([...new Set(duplicateKeys)], [], "Localizable.strings contains duplicate keys");

@@ -520,3 +520,24 @@
 "Clean up tabs I haven’t used in:" = "清理超过以下时长未使用的标签页：";
 "12 hours" = "12 小时";
 "Address Bar:" = "地址栏：";
+
+/* Dia 设置窗口：隐私、个人资料、应用、技能、账单、快捷键 */
+"Content blocking" = "内容拦截";
+"Block ads" = "拦截广告";
+"Block cookie banners" = "拦截 Cookie 提示条";
+"Block trackers" = "拦截跟踪器";
+"Advanced Settings" = "高级设置";
+"Data" = "数据";
+"Share content data to help improve Dia" = "共享内容数据以帮助改进 Dia";
+"This data will not be tied to your profile" = "这些数据不会与你的个人资料关联";
+"Profiles keep your browsing organized — keep history, logins, cookies, and extensions separate per profile, or share them across selected profiles with a toggle." = "个人资料让你的浏览井然有序——历史记录、登录状态、Cookie 和扩展可以按个人资料隔离，也可以用开关在选定的个人资料之间共享。";
+"New windows open with" = "新窗口默认使用";
+"Create Profile…" = "创建个人资料…";
+"Receive a daily personalized summary" = "每天收到一份个性化摘要";
+"Atlassian apps" = "Atlassian 应用";
+"Connected apps" = "已连接的应用";
+"Auto-connected" = "自动连接";
+"Available apps" = "可用应用";
+"View Plans" = "查看套餐";
+"Perform common actions in Dia faster and from anywhere." = "在任何地方更快地执行 Dia 的常用操作。";
+"Select an action to customize its keyboard shortcut." = "选择一个操作，自定义它的快捷键。";
