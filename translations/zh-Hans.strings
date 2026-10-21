@@ -541,3 +541,8 @@
 "View Plans" = "查看套餐";
 "Perform common actions in Dia faster and from anywhere." = "在任何地方更快地执行 Dia 的常用操作。";
 "Select an action to customize its keyboard shortcut." = "选择一个操作，自定义它的快捷键。";
+
+/* 设置窗口：同步与设备相关按钮 */
+"starting up" = "正在启动";
+"Advanced…" = "高级…";
+"Connect Another Device…" = "连接其他设备…";

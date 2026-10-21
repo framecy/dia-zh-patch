@@ -57,6 +57,19 @@ it never touches your account, bookmarks, passwords, tabs or history.
 
 The stable commands are `apply`, `audit`, `status`, and `restore`.
 
+## Re-signing and sign-in state (important)
+
+The patch re-signs Dia ad-hoc. In some cases Dia then fails to recognise the
+credentials it stored locally, and shows its "What's your email?" onboarding on
+next launch. This is not data loss: history, bookmarks and the previous session
+tabs stay in `~/Library/Application Support/Dia`. Sign in again with the same
+email and the spaces come back; a Dia Recovery Kit export also works.
+
+Prevention: quit Dia completely (⌘Q) before running `apply` or `restore`, check
+that you are still signed in after patching, and keep a copy of
+`~/Library/Application Support/Dia` (or a Time Machine snapshot) when the data
+matters.
+
 ## Coverage and limits
 
 The installer automatically selects `full`, `core`, or `incompatible`

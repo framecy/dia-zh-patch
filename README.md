@@ -92,6 +92,23 @@ cd ~/Downloads/dia-zh-patch-0.2.0-rc.1-macos-arm64   # 或你的源码目录
 汉化），不会套用旧版 WebUI 替换规则。想把新 Build 升级为 `full`，见文末
 "新增一个 Build"。
 
+## 重新签名与登录态（重要）
+
+补丁会把 Dia 改成本机 ad-hoc 签名。**在少数情况下，Dia 会因此认不出本地保存的
+登录凭据**，表现为重新打开时出现「What's your email?」引导页。
+
+这不是数据丢失：历史记录、书签、上次会话的标签页都还在
+`~/Library/Application Support/Dia`（实测：历史 4391 条、书签 661 个、54 个标签页
+URL 全部可读）。处理办法是用原邮箱重新登录一次，spaces 和标签页会随之回来；如果
+你导出过 Dia 的 Recovery Kit，也可以用它解密本地数据。
+
+三条预防措施：
+
+1. 执行 `apply` 或 `restore` 之前，先手动 ⌘Q **完全退出 Dia**，不要让它边跑边改；
+2. 打完补丁先确认仍是登录态（侧栏 spaces 在、没有出现邮箱引导页），再用；
+3. 数据重要时先留一份副本：`ditto ~/Library/Application\ Support/Dia ~/Dia-data-snapshot`，
+   或依赖 Time Machine 本地快照。
+
 ## 命令
 
 | 命令 | 作用 |
@@ -132,7 +149,7 @@ DIA_ZH_MODE=core ./dia-zh.command apply
 3. 通过源码构建的 arm64 动态库汉化 macOS 静态和动态菜单。
 4. 仅对清单已验证的 Build 执行文件级 WebUI 精确替换。
 
-当前统一词表有 510 个键，其中菜单白名单 156 个。菜单翻译器会保护书签、历史、
+当前统一词表有 513 个键，其中菜单白名单 156 个。菜单翻译器会保护书签、历史、
 窗口名和网页标题等用户内容；普通网页、AI 实时回答、第三方扩展、prompt、agent
 spec 和服务端临时文案不在范围内。
 

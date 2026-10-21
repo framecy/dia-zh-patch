@@ -67,6 +67,18 @@ node scripts/derive-webui-manifest.mjs --app /Applications/Dia.app --version <�
 | 缺 `lib/DiaZhMenu.dylib` | 源码安装必须先跑 `./scripts/build-menu.zsh`（Release ZIP 里已自带） |
 | 官方更新后补丁失效 | 再跑一次 `./dia-zh.command apply`；旧状态会被标记 `superseded` |
 
+## 登录态风险与恢复
+
+补丁会 ad-hoc 重签 Dia，个别情况下 Dia 会认不出本地登录凭据，重启后出现
+「What's your email?」引导页。**数据不会丢**，历史、书签、上次标签页仍在
+`~/Library/Application Support/Dia`。
+
+- 预防：执行 `apply` / `restore` 前先让用户 ⌘Q 完全退出 Dia；打完补丁核对侧栏
+  spaces 是否还在。
+- 恢复：用原邮箱重新登录一次即可；必要时用 Dia Recovery Kit 解密本地数据，
+  或从 `ditto` 副本 / Time Machine 快照回滚整个 `Dia` 数据目录。
+- 报告：如果出现引导页，先告知用户"数据未丢、需重新登录"，不要擅自删数据目录。
+
 ## 硬性约束（写给 Agent）
 
 - 不要关闭 Dia 的自动更新。
