@@ -483,3 +483,40 @@
 "ends tomorrow" = "明天截止";
 "Stop dictation" = "停止语音输入";
 "Submit feedback" = "提交反馈";
+
+/* Dia 设置窗口（原生 SwiftUI） */
+"Account" = "账户";
+"Billing" = "账单";
+"Shortcuts" = "快捷键";
+"Name" = "名称";
+"Email" = "邮箱";
+"Set Dia as Default" = "设为默认浏览器";
+"Dia works best as your default browser" = "设为默认浏览器后 Dia 体验最佳";
+"Manage Atlassian Account" = "管理 Atlassian 账户";
+"Upgrade Account" = "升级账户";
+"Sync your Profiles, Bookmarks, Pinned Tabs, Groups, and Settings across devices. All data is end-to-end encrypted." = "在你的设备间同步个人资料、书签、固定标签页、群组和设置。所有数据均经过端到端加密。";
+"Automatically update Dia" = "自动更新 Dia";
+"Warn before quitting" = "退出前警告";
+"Prefer Search Engine" = "首选搜索引擎";
+"Preserve Tabs and Windows" = "保留标签页和窗口";
+"Sounds:" = "声音：";
+"When quitting Dia:" = "退出 Dia 时：";
+
+/* Dia 设置窗口：标签页与高级 */
+"Tab Layout:" = "标签布局：";
+"Top of Window" = "窗口顶部";
+"Sidebar" = "侧边栏";
+"General:" = "通用：";
+"Extend website color into tab bar" = "把网站配色延伸到标签栏";
+"Haptic feedback when reordering tabs" = "重排标签页时提供触感反馈";
+"Add new tabs to the top" = "新标签页添加到最前面";
+"Warn before closing last tab in a Profile" = "关闭个人资料里最后一个标签页前先警告";
+"Tab Groups:" = "标签页群组：";
+"⌘-clicking links creates tab groups" = "⌘ 点击链接会创建标签页群组";
+"⌥-⇧-click opens tab in group" = "⌥⇧ 点击会在群组里打开标签页";
+"Automatically group tabs for meetings" = "自动按会议给标签页分组";
+"Add emoji to new tab groups" = "给新标签页群组加上表情符号";
+"Tab Cleanup:" = "标签页清理：";
+"Clean up tabs I haven’t used in:" = "清理超过以下时长未使用的标签页：";
+"12 hours" = "12 小时";
+"Address Bar:" = "地址栏：";
