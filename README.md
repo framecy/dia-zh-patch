@@ -6,9 +6,9 @@
 应用和资源、创建完整备份，再汉化 Chromium 界面、原生界面和菜单；对已验证的
 Build 额外执行严格限定的 WebUI 替换。
 
-当前版本为 `v0.1.0-rc.2` 预发布版。完整模式仅验证过 Dia `1.41.1`
-（Build `84131`）；核心模式另已实测 Dia `1.44.1`（Build `85212`）。系统要求
-macOS 14 或更高版本。
+当前版本为 `v0.1.0-rc.2` 预发布版。完整模式已验证 Dia `1.41.1`（Build `84131`）
+与 `1.53.0`（Build `88760`）；核心模式另已实测 Dia `1.44.1`（Build `85212`）。
+系统要求 macOS 14 或更高版本。
 
 > 本项目与 The Browser Company、Dia 或 Atlassian 没有隶属或授权关系。
 > 补丁会把应用改为本机 ad-hoc 签名；请理解风险并保留补丁创建的官方备份。
@@ -43,8 +43,8 @@ macOS 14 或更高版本。
 
 补丁自动选择以下覆盖级别，并在 `audit` 与 `status` 中明确显示：
 
-- `full`：已验证的 `1.41.1 (84131)`，启用 Chromium、统一词表、菜单动态库和
-  WebUI 精确替换。
+- `full`：已验证的 `1.41.1 (84131)` 与 `1.53.0 (88760)`，启用 Chromium、
+  统一词表、菜单动态库和 WebUI 精确替换。
 - `core`：其他结构兼容的官方 Build，只启用 Chromium、统一词表和菜单汉化，
   不套用旧 WebUI 规则。`1.44.1 (85212)` 已完成本机核心模式验收。
 - `incompatible`：Bundle ID、官方签名身份、关键资源或架构不兼容，写入前拒绝。
@@ -66,7 +66,7 @@ DIA_ZH_MODE=core ./dia-zh.command apply
 3. 通过源码构建的 arm64 动态库汉化 macOS 静态和动态菜单。
 4. 仅对清单已验证的 Build 执行文件级 WebUI 精确替换。
 
-当前统一词表有 408 个键，其中菜单白名单 156 个。菜单翻译器会保护书签、历史、
+当前统一词表有 458 个键，其中菜单白名单 156 个。菜单翻译器会保护书签、历史、
 窗口名和网页标题等用户内容；普通网页、AI 实时回答、第三方扩展、prompt、agent
 spec 和服务端临时文案不在范围内。
 
@@ -110,10 +110,21 @@ Mach-O、嵌套 Bundle、Framework，最后 Dia.app，并执行严格深度验�
 ./scripts/build-menu.zsh
 ```
 
-测试覆盖词表、占位符、菜单冲突、manifest 索引、87 条 WebUI 规则、180 个文件
-哈希、Zsh/JXA/plist、arm64 编译，以及嵌套签名/JIT Fixture。发布验收与已知基线
-见 [QA_CHECKLIST.md](docs/QA_CHECKLIST.md) 和
+测试覆盖词表、占位符、菜单冲突、manifest 索引、全部已知 Build 的 WebUI 规则与
+文件哈希、Zsh/JXA/plist、arm64 编译，以及嵌套签名/JIT Fixture。发布验收与已知
+基线见 [QA_CHECKLIST.md](docs/QA_CHECKLIST.md) 和
 [BUILD_PROVENANCE.md](docs/BUILD_PROVENANCE.md)。
+
+新增一个 Build 时，先用官方应用推导清单，再人工复核规则与译文：
+
+```zsh
+node scripts/derive-webui-manifest.mjs --app /Applications/Dia.app --version 1.53.0 --build 88760
+node scripts/derive-webui-manifest.mjs --app /Applications/Dia.app --version 1.53.0 --build 88760 --write
+node scripts/derive-webui-manifest.mjs --app /Applications/Dia.app --check manifests/1.53.0-88760.json
+```
+
+推导脚本只从 `translations/zh-Hans.strings` 取译文，命中次数对不上时会在
+`apply` 前被 `patch-webui.jxa` 拦住，不会静默改坏文件。
 
 ## 许可证
 

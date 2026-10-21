@@ -61,7 +61,7 @@
 - `status` 与原版只读 `audit` 正确识别 `full`。
 - 默认完整模式安装通过，schema v2、统一 ad-hoc 身份和严格深度签名通过。
 - Renderer/GPU 同时保留 JIT 与 Library Validation 兼容权限。
-- 408 条统一词表、156 个菜单白名单、87 条 WebUI 规则和 180 个哈希通过。
+- 458 条统一词表、156 个菜单白名单、全部已知 Build 的 WebUI 规则与哈希通过。
 - 强制 `core` 安装通过，WebUI 仍与官方原始 SHA-256 完全一致。
 - 完整模式与核心模式恢复后，官方 Team ID `S6N382Y83G` 和严格签名通过。
 - 签名中途遇到无效资源 Bundle 时自动回滚成功，未留下半签名应用。

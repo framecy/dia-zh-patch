@@ -1,9 +1,9 @@
 # Dia Simplified Chinese Patch
 
 An unofficial Simplified Chinese localization patch for Dia on Apple Silicon
-Macs. `v0.1.0-rc.2` is a pre-release; full WebUI coverage is verified only for
-Dia `1.41.1` (Build `84131`) on macOS 14+. Core mode has also been tested on
-Dia `1.44.1` (Build `85212`).
+Macs. `v0.1.0-rc.2` is a pre-release; full WebUI coverage is verified for
+Dia `1.41.1` (Build `84131`) and `1.53.0` (Build `88760`) on macOS 14+. Core
+mode has also been tested on Dia `1.44.1` (Build `85212`).
 
 Download the macOS arm64 ZIP from GitHub Releases, verify its SHA-256 file,
 quit Dia, then double-click `dia-zh.command`. The stable commands are `apply`,
@@ -11,7 +11,10 @@ quit Dia, then double-click `dia-zh.command`. The stable commands are `apply`,
 
 The installer automatically selects `full`, `core`, or `incompatible`
 coverage. Unknown but structurally compatible official builds use the safe
-core mode and never receive old WebUI replacements. Set `DIA_ZH_MODE=core` to
+core mode and never receive old WebUI replacements. New builds are derived
+from the unified catalog with `scripts/derive-webui-manifest.mjs`, then
+reviewed and validated against the official app before being added to
+`manifests/index.json`. Set `DIA_ZH_MODE=core` to
 skip WebUI patching on a known build.
 
 The patch preserves Dia's automatic updater. After an official update, stale

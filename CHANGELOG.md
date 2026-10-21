@@ -1,5 +1,14 @@
 # 更新记录
 
+## 未发布
+
+- 新增 Dia `1.53.0 (88760)` 完整模式清单：8 个 WebUI 根目录、146 个文件哈希、
+  82 条规则（127 处命中），覆盖聊天面板、欢迎明信片、晨间简报和工具导览。
+- 统一词表补充 50 条 WebUI 文案（408 → 458 个键）。
+- 新增 `scripts/derive-webui-manifest.mjs`：从官方应用与统一词表推导任意 Build
+  的清单与原版/补丁版哈希，支持 `--write` 落盘和 `--check` 校对。
+- 测试改为遍历 `manifests/index.json` 中的全部已知 Build，不再只校验单一清单。
+
 ## 0.1.0-rc.2
 
 - 新增 `full`、`core`、`incompatible` 自动分层兼容和 `DIA_ZH_MODE=core`。
