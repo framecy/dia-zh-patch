@@ -43,7 +43,8 @@ it never touches your account, bookmarks, passwords, tabs or history.
    ```
 
    Double-clicking `dia-zh.command` works too; if Gatekeeper blocks it, use
-   right-click → Open, or System Settings → Privacy & Security → "Open Anyway".
+   right-click → Open, or System Settings → Privacy & Security → "Open Anyway",
+   or clear the quarantine flag: `xattr -d com.apple.quarantine dia-zh.command`.
 
 3. Verify in 30 seconds: `./dia-zh.command status` reports `applied`; the menu
    bar and the ⌘, settings window are Chinese.

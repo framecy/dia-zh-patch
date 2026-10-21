@@ -46,7 +46,11 @@ cd dia-zh-patch-0.2.0-rc.1-macos-arm64
 ```
 
 也可以直接双击 `dia-zh.command` 选择"安装补丁"。若被 Gatekeeper 拦，右键 →
-打开，或到 系统设置 → 隐私与安全性 →"仍要打开"。
+打开，或到 系统设置 → 隐私与安全性 →"仍要打开"；仍然不行就去掉隔离标记：
+
+```zsh
+xattr -d com.apple.quarantine dia-zh.command
+```
 
 **方式 B：从源码安装（想改译文、或需要自己打包时用）**
 
